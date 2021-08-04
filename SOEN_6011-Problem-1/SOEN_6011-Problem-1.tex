@@ -9,8 +9,6 @@
 \usepackage[linkcolor=red]{hyperref}
 \usepackage{paralist}
 \graphicspath{ {./images/} }
-\usepackage{biblatex}
-\addbibresource{references.bib}
 
 \begin{document}
 \begin{titlepage}
@@ -29,16 +27,16 @@
 \begin{Large}
 \textbf{SUMMER 2021} \\
 \end{Large}
-\vspace*{0.7in}
+\vspace*{0.9in}
 \begin{Large}
 \textbf{SUPER CALCULATOR} \\
 \end{Large}
-\vspace*{0.5in}
+\vspace*{0.9in}
 \begin{Large}
 \textbf{PROBLEM - 1} \\
+Function Description \\
 \end{Large}
-\vspace*{0.3in}
-\vspace*{0.3in}
+\vspace*{0.9in}
 \rule{80mm}{0.1mm}\\
 \vspace*{0.1in}
 \begin{large}
@@ -50,7 +48,7 @@ Kyle Taylor Lange\\
 \vspace*{0.1in}
 Sijie Min\\
 \vspace*{0.1in}
-Manimaran Palani\\
+Manimaran Palani\\ 
 \vspace*{0.3in}
 \date{\normalsize\today} 
 \end{large}
@@ -66,20 +64,25 @@ Manimaran Palani\\
 \textbf{ Software Engineering Processes}  \hfill \textbf{40183615} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
 \\
-\section*{Problem 1 solution:}
- \subsection*{ Function F2: Tangent Function, $tan(x)$ } 
- \normalsize{$tan(x)$ is a trigonometric function which relate a right-angled triangle to ratios of two side lengths. In addition, it also uses to find the slope of a line.} 
- \\\\
- \normalsize{In the graph of a tangent function, there are no high or low points, so this function does not have an amplitude. The tangent function is define as below: \[tan(x) = \frac{sin(x)}{cos(x)}\] }
- \\\
- \normalsize{the tangent function is undefined when $cos(x) = 0 $, therefore, tangent function has a vertical asymptote whenever $cos(x) = 0 $. }
- \\\\
- \normalsize{ The range of $tan(x)$ is all real number, except 0. The $tan(x)$ does not have amplitude therefore, it has vertical asymptotes. As, tangent function increases and decreases without bound between vertical asymptotes, there is no horizontal asymptotes exist for it.}
- \\\\
+ \subsection*{ Tangent Function, $tan(x)$ } 
+ \normalsize{$tan(x)$ is a trigonometric function which relate a right-angled triangle to ratios of two side lengths. In addition, it also uses to find the slope of a line. The tangent function is define as below: \[tan(x) = \frac{sin(x)}{cos(x)}\]}
+ \
+ \subsection*{Graph}
+ \normalsize{In the graph of a tangent function, there are no high or low points, so this function does not have an amplitude.}
+ \begin{center}
+\includegraphics[width= 4cm]{tan}
+\end{center}
+\begin{center}
+Graph of tangent function $y = tan(x)$\end{center}
+ \normalsize{Where, $x$ is real number. The tangent function is undefined when $cos(x) = 0 $, therefore, tangent function has a vertical asymptote whenever $cos(x) = 0 $. }
+ \subsection*{Range}
+ \normalsize{ The range of $tan(x)$ is all real number (negative to positive infinity), except 0. The $tan(x)$ does not have amplitude therefore, it has vertical asymptotes. As, tangent function increases and decreases without bound between vertical asymptotes, there is no horizontal asymptotes exist for it.}
+ 
+ \subsection*{Domain and Co-domain}
  \normalsize{The domain of tangent function is all real number except the value where $cos(x) = 0$ because if $cos(x) = 0$ then $tan(x)$ will be undefined. The co-domain of $tan(x)$ is \((-\infty, +\infty\)).}
 \pagebreak
 
-\section*{\centering{PROBLEM 2 - F3: Hyperbolic Sine, $sinh(x)$}}
+\section*{\centering{PROBLEM 1 - F3: Hyperbolic Sine, $sinh(x)$}}
 \normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Kyle Taylor Lange} \\
 \textbf{ Software Engineering Processes}  \hfill \textbf{27627696} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
@@ -129,9 +132,7 @@ The expression can be called as “\(x\) raised to the power of y,” “\(x\) t
 \cite{mathbits} All the real numbers from -infinite to +infinite.(-\(\infty\) to \(\infty\))
  \begin{center} $(x,y) \in \R^2 : (x \geq 0 \land y \neq 0) \lor x>0$ \end{center}
 \subsection*{Co-domain}
-A set of all positive real numbers from zero to infinite (0 to \(\infty\))
-\ref{graph} is known as the Exponentiation function
-
+A set of all positive real numbers from zero to infinite (0 to \(\infty\)) is known as the Exponentiation function
 \subsection*{Characteristics}
 \begin{flushleft}
 \textbf{Graph - }
@@ -150,8 +151,21 @@ A set of all positive real numbers from zero to infinite (0 to \(\infty\))
 \end{center}
 \begin{center}
 Graph crosses the y-axis at (0,1)\end{center}
-\printbibliography
+\begin{thebibliography}{}
+\bibitem{mathInsight} 
+Nykamp DQ: Basic rules for exponentiation
+\\\texttt{https://mathbitsnotebook.com/Algebra2/Exponential/EXExpFunctions.html}
+\bibitem{mathbits} 
+MathBits Teacher: Exponential Functions,
+\\\texttt{https://mathbitsnotebook.com/Algebra2/Exponential/EXExpFunctions.html}
+\bibitem{wolframalpha} 
+WolframAlpha: Domain of exponentiation function,
+\\\texttt{https://www.wolframalpha.com/input/?i=x\%5Ey}
+\end{thebibliography}
 \newpage
 \addcontentsline{toc}{section}{b) Context of Use Model}
 \section*{Context of Use Model}
+\begin{center}
+\includegraphics[width=15cm]{context_diagram}
+\end{center}
 \end{document}

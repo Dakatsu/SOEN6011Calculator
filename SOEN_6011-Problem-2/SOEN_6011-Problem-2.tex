@@ -1,0 +1,205 @@
+
+\documentclass[a4paper, 11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{fullpage} % changes the margin
+\usepackage{graphicx} %package to manage images
+\graphicspath{ {./images/} }
+
+\begin{document}
+\begin{titlepage}
+\vspace*{0.7in}
+\begin{center}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=8cm]{univ_logo}
+\end{center}
+\end{figure}
+\vspace*{0.3in}
+\begin{Large}
+\textbf{SOEN 6011 : SOFTWARE ENGINEERING PROCESSES} \\
+\end{Large}
+\vspace*{0.1in}
+\begin{Large}
+\textbf{SUMMER 2021} \\
+\end{Large}
+\vspace*{0.9in}
+\begin{Large}
+\textbf{SUPER CALCULATOR} \\
+\end{Large}
+\vspace*{0.9in}
+\begin{Large}
+\textbf{PROBLEM - 2} \\
+Requirements\\\footnotesize{ISO/IEC/IEEE} 29148 Standard \\
+\end{Large}
+\vspace*{0.9in}
+\rule{80mm}{0.1mm}\\
+\vspace*{0.1in}
+\begin{large}
+Authors \\
+\vspace*{0.1in}
+Rokeya Begum Keya\\
+\vspace*{0.1in}
+Kyle Taylor Lange\\
+\vspace*{0.1in}
+Sijie Min\\
+\vspace*{0.1in}
+Manimaran Palani\\ 
+\vspace*{0.3in}
+\date{\normalsize\today} 
+\end{large}
+\end{center}
+\end{titlepage}
+
+\newpage
+\section*{\centering{PROBLEM 2 - F2: $tan(x)$}}
+\normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Rokeya Begum Keya} \\
+\textbf{ Software Engineering Processes}  \hfill \textbf{40183615} \\
+\hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
+\\
+\pagebreak
+
+\section*{\centering{PROBLEM 2 - F3: Hyperbolic Sine, $sinh(x)$}}
+\normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Kyle Taylor Lange} \\
+\textbf{ Software Engineering Processes}  \hfill \textbf{27627696} \\
+\hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
+\\\\\\
+
+\pagebreak
+
+\section*{\centering{PROBLEM 2 - F*}}
+\normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Sijie Min} \\
+\textbf{ Software Engineering Processes}  \hfill \textbf{401*****} \\
+\hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
+\\\\\\\\\\
+ \begin{center} Team please add your content here \end{center}
+\pagebreak
+
+\section*{\centering{PROBLEM 2 - F7 : \(x^y\)}}
+\normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Manimaran Palani} \\
+\textbf{ Software Engineering Processes}  \hfill \textbf{40167543} \\
+\hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
+\\
+\section*{Requirements and Assumptions}\cite{ReqView}\cite{29148}\\
+The current section describes the requirements and assumptions to implement the function \(x^y\).
+\\\\\\
+\textbf{Explicit Assumption :}  The transcendental function \(x^y\) will be accurate and accepts input which comprises of rational and irrational numbers.
+\\\\\\\\
+\textbf{Requirement Id : F7-R1}\\\\
+\begin{tabular}{ll}
+\textbf{Overview} & X(0) to the power of Y(0) \\
+\textbf{Version} & 1.0 \\
+\textbf{Description} & 
+\begin{tabular}[c]{@{}l@{}}If the user gives an input for X as Zero and input for Y as Zero.\\The function may return the 1 as output.
+\end{tabular} \\
+\textbf{Owner} & Manimaran Palani \\
+\textbf{Priority} & High \\
+\textbf{Type} & Functional \\
+\textbf{Difficulty} & Medium \\
+\textbf{Verification} Method \\
+\end{tabular}
+\\\\\\\\\\
+\textbf{Requirement Id : F7-R2}\\\\
+\begin{tabular}{ll}
+\textbf{Overview} & X(0) to the power of Y (Positive Numbers) \\
+\textbf{Version} & 1.0 \\
+\textbf{Description} & 
+\begin{tabular}[c]{@{}l@{}}If the user gives an input for X as zero and input for Y as
+\\any positive Number. The function may return zero as output.
+\end{tabular} \\
+\textbf{Owner} & Manimaran Palani \\
+\textbf{Priority} & High \\
+\textbf{Type} & Functional \\
+\textbf{Difficulty} & Medium \\
+\textbf{Verification Method} &                                    \end{tabular}
+\\\\\\\\\\\\\\\\\\
+\textbf{Requirement Id : F7-R3}\\\\
+\begin{tabular}{ll}
+\textbf{Overview} & X(0) to the power of Y (Negative Numbers) \\
+\textbf{Version} & 1.0 \\
+\textbf{Description} & 
+\begin{tabular}[c]{@{}l@{}}If the user gives an input for X as zero and input for Y as any
+\\ Negative Number.The function may return infinity as output.
+\end{tabular} \\
+\textbf{Owner} & Manimaran Palani \\
+\textbf{Priority} & High \\
+\textbf{Type} & Functional \\
+\textbf{Difficulty} & Medium \\
+\textbf{Verification Method} &                                    \end{tabular}
+\\\\\\\\\\\\\\\\
+\textbf{Requirement Id : F7-R4}\\\\
+\begin{tabular}{ll}
+\textbf{Overview} & X(Positive Number) to the power of Y (0) \\
+\textbf{Version} & 1.0 \\
+\textbf{Description} & 
+\begin{tabular}[c]{@{}l@{}}If the user gives an input for X of any positive number and\\input for Y as Zero.The function may return 1 as the output.
+\end{tabular} \\
+\textbf{Owner} & Manimaran Palani \\
+\textbf{Priority} & High \\
+\textbf{Type} & Functional \\
+\textbf{Difficulty} & Medium \\
+\textbf{Verification Method} &                                                          \end{tabular}
+\\\\\\\\\\\\\\\\
+\textbf{Requirement Id : F7-R5}\\\\
+\begin{tabular}{ll}
+\textbf{Overview} & X(Negative Number) to the power of Y (0) \\
+\textbf{Version} & 1.0 \\
+\textbf{Description} & 
+\begin{tabular}[c]{@{}l@{}}If the user gives an input for X of any negative number and
+\\input for Y as Zero.The function may return -1 as the output.
+\end{tabular} \\
+\textbf{Owner} & Manimaran Palani \\
+\textbf{Priority} & High \\
+\textbf{Type} & Functional \\
+\textbf{Difficulty} & Medium \\
+\textbf{Verification Method} &  
+\end{tabular}
+\\\\\\\\\\\\\\\\
+\textbf{Requirement Id : F7-R6}\\\\
+\begin{tabular}{ll}
+\textbf{Overview} & X(Negative Number) to the power of Y (Positive or Negative Number) \\
+\textbf{Version} & 1.0 \\
+\textbf{Description} & 
+\begin{tabular}[c]{@{}l@{}}If the user gives an input for X as any negative number and input \\for Y as positive or negative number. The function may return
+\\negative number as the output.
+\end{tabular} \\
+\textbf{Owner} & Manimaran Palani \\
+\textbf{Priority} & High \\
+\textbf{Type} & Functional \\
+\textbf{Difficulty} & Medium \\
+\textbf{Verification Method} &
+\end{tabular}
+\\\\\\\\\\\\\\
+\textbf{Requirement Id : F7-R7}\\\\
+\begin{tabular}{ll}
+\textbf{Overview} & X(Positive Number) to the power of Y  (Positive or Negative Number) \\
+\textbf{Version} & 1.0 \\
+\textbf{Description} & \begin{tabular}[c]{@{}l@{}}If the user gives an input for X as any positive number and input \\for Y as positive or negative numbers. The function may return\\positive number as the output.\end{tabular} \\
+\textbf{Owner} & Manimaran Palani \\
+\textbf{Priority} & High \\
+\textbf{Type} & Functional \\
+\textbf{Difficulty} & Medium \\
+\textbf{Verification Method} &                                     \end{tabular}
+\\\\\\\\\\\\
+\textbf{Requirement Id : F7-R8}\\\\
+\begin{tabular}{ll}
+\textbf{Overview} & Availability \\
+\textbf{Version} & 1.0 \\
+\textbf{Description} & 
+\begin{tabular}[c]{@{}l@{}}The system may provide the response with output to the user \\ within finite time. \\
+\end{tabular} \\
+\textbf{Owner} & Manimaran Palani \\
+\textbf{Priority} & High \\
+\textbf{Type} & Non-Functional \\
+\textbf{Difficulty} & Medium \\
+\textbf{Verification Method} &
+\end{tabular}
+\begin{thebibliography}{}
+\bibitem{ReqView} 
+ReqView : Nykamp DQ: Requirements Specification Templates
+\\\texttt{https://www.reqview.com/doc/iso-iec-ieee-29148-templates}
+\bibitem{29148} 
+29148-2018-ISO/IEC/IEEE International Standard-Systems and software engineering-Life cycle processes-Requirements engineering,
+\\\texttt{https://standards.ieee.org/standard/29148-2018.html}
+\end{thebibliography}
+\end{document}

@@ -100,7 +100,7 @@ public class SuperCalculator  extends JFrame{
 		PowerFunction powerFunction = new PowerFunction();
 		
 		/** The tangent function. */
-//		TangentFunction tangentFunction = new TangentFunction();
+		TangentFunction tangentFunction = new TangentFunction();
 		
 
 		/**
@@ -164,8 +164,8 @@ public class SuperCalculator  extends JFrame{
 		public void arithmeticOperation(String str) {
 			switch (calculation) {
 			case 1:// Tangent
-//				String outputwer = tangentFunction.calculate(Double.parseDouble(str));
-//				textFieldInput.setText(outputwer);
+				String outputwer = tangentFunction.calculate(Double.parseDouble(str));
+				textFieldInput.setText(outputwer);
 				break;
 
 			case 2:// SinH
@@ -334,7 +334,7 @@ public class SuperCalculator  extends JFrame{
 					if (isNumeric(str)) {
 						input = Double.parseDouble(textFieldInput.getText());
 						calculation = 1;
-						label.setText(" Tan“(" + input + ")");
+						label.setText(" TanÂ“(" + input + ")");
 						arithmeticOperation(textFieldInput.getText());
 					} else {
 						txtError.setText("please input a real number except negative integer");
@@ -364,7 +364,7 @@ public class SuperCalculator  extends JFrame{
 					} else if (isNumeric(str)) {
 						input = Double.parseDouble(textFieldInput.getText());
 						calculation = 2;
-						label.setText(" SinH“(" + input + ")");
+						label.setText(" SinHÂ“(" + input + ")");
 						arithmeticOperation(textFieldInput.getText());
 					} else {
 						txtError.setText("please input a real number except negative integer");

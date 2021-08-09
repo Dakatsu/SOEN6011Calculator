@@ -100,7 +100,7 @@ public class SuperCalculator  extends JFrame{
 		PowerFunction powerFunction = new PowerFunction();
 		
 		/** The tangent function. */
-		TangentFunction tangentFunction = new TangentFunction();
+//		TangentFunction tangentFunction = new TangentFunction();
 		
 
 		/**
@@ -164,8 +164,8 @@ public class SuperCalculator  extends JFrame{
 		public void arithmeticOperation(String str) {
 			switch (calculation) {
 			case 1:// Tangent
-				String outputwer = tangentFunction.calculate(Double.parseDouble(str));
-				textFieldInput.setText(outputwer);
+//				String outputwer = tangentFunction.calculate(Double.parseDouble(str));
+//				textFieldInput.setText(outputwer);
 				break;
 
 			case 2:// SinH

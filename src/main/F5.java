@@ -33,7 +33,10 @@ public class F5 {
      * @return a*(b^x) double type
      */
     public static double f5(double a, double b, int x) {
-        double bx = b * intPower(b, x);
+        if (a == 0) {
+            return 0;
+        }
+        double bx = intPower(b, x);
         return a * bx;
     }
 

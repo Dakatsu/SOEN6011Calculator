@@ -361,15 +361,18 @@ public class SuperCalculator  extends JFrame{
 					if (str.contains(" ") || str.equals("")) {
 						txtError.setText("please input a real number except negative integer");
 						txtError.setVisible(true);
-					} else if (isNumeric(str)) {
-						input = Double.parseDouble(textFieldInput.getText());
-						calculation = 2;
-						label.setText(" SinH(" + input + ")");
-						arithmeticOperation(textFieldInput.getText());
-					} else {
-						txtError.setText("please input a real number except negative integer");
-						txtError.setVisible(true);
-					}
+					} 
+					else {
+						try {
+							calculation = 2;
+							arithmeticOperation(textFieldInput.getText());
+							input = Double.parseDouble(textFieldInput.getText());
+							label.setText(" SinH(" + input + ")");
+						} catch (NumberFormatException ex) {
+							txtError.setText("please input a real number");
+							txtError.setVisible(true);
+						}
+					} 
 				}
 			});
 			buttonGamma.setFont(new Font("Tahoma", Font.BOLD, 15));

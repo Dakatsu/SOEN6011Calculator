@@ -119,6 +119,11 @@ class SinhLibrariesTest {
 	}
 	
 	@Test 
+	void gcdLargerInts() {
+		assertEquals(7, SinhLibraries.gcd(385, 623));
+	}
+	
+	@Test 
 	void absZero() {
 		assertEquals(0, SinhLibraries.abs(0));
 	}

@@ -38,7 +38,14 @@ public class SinhLibraries {
 	 * @param maxDecDigits The maximum number of digits after the decimal to parse.
 	 * @return The result.
 	 */
-	public static double sinh(String input, int maxDecDigits) {
+	public static double sinh(String input, int maxDecDigits) throws NumberFormatException {
+		// Just spit back infinities if they were input.
+		if (input.toUpperCase().equals("INFINITY")) {
+			return Double.POSITIVE_INFINITY;
+		}
+		if (input.toUpperCase().equals("-INFINITY")) {
+			return Double.NEGATIVE_INFINITY;
+		}
 		long intInput = 0;
 		int fracNum = 0;
 		int fracDen = 0;
@@ -112,7 +119,7 @@ public class SinhLibraries {
 	 * @param input The angle to calculate in string form.
 	 * @return The result.
 	 */
-	public static double sinh(String input) {
+	public static double sinh(String input) throws NumberFormatException {
 		return sinh(input, DEFAULT_MAX_DECIMAL_DIGITS);
 	}
 	

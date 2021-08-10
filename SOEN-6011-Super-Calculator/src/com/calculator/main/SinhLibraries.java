@@ -39,6 +39,10 @@ public class SinhLibraries {
 	 * @return The result.
 	 */
 	public static double sinh(String input, int maxDecDigits) throws NumberFormatException {
+		// Refuse input with exponents.
+		if (input.toUpperCase().contains("E")) {
+			throw new NumberFormatException("This function cannot handle exponents.");
+		}
 		// Just spit back infinities if they were input.
 		if (input.toUpperCase().equals("INFINITY")) {
 			return Double.POSITIVE_INFINITY;

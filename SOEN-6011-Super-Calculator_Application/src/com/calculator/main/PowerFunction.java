@@ -2,7 +2,7 @@ package com.calculator.main;
 
 public class PowerFunction {
 
-	double calculate(double firstRealNumber, double secondRealNumber) {
+	public double calculate(double firstRealNumber, double secondRealNumber) {
 		double result = 1.0;
 		result = powerBySquaring(result, firstRealNumber, secondRealNumber);
 		final double baseFraction = secondRealNumber - (int) secondRealNumber;

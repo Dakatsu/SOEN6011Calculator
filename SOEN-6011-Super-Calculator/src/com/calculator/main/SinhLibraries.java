@@ -53,28 +53,30 @@ public class SinhLibraries {
 			if (decimalIdx != 0 && !input.startsWith("-.")) {
 				intInput = Long.parseLong(input.substring(0, decimalIdx));
 			}
-			// Separate the real portion into two fractional parts.
-			int startIdx = decimalIdx + 1;
-			// We can parse up to 9 digits in an int.
-			int digitsToParse = 9 < maxDecDigits ? 9 : maxDecDigits;
-			int endIdx = input.length() < startIdx + digitsToParse ? input.length() : startIdx + digitsToParse;
-			String fracNumStr = input.substring(startIdx, endIdx);
-			String fracDenStr = "1" + "0".repeat(fracNumStr.length());
-			fracNum = Integer.parseInt(fracNumStr);
-			fracDen = Integer.parseInt(fracDenStr);
-			// Attempt to reduce the fractions via GCD.
-			long gcd = gcd(fracNum, fracDen);
-			fracNum /= gcd;
-			fracDen /= gcd;
-			// Raising E to anything higher than MAX_E_EXPONENT returns infinity.
-			// To prevent that, clamp the numerator to below it.
-			if (fracNum > MAX_E_EXPONENT) {
-				fracDen = (int)(fracDen * (long)MAX_E_EXPONENT / fracNum);
-				fracNum = MAX_E_EXPONENT;
-			}
-			// Negate the fractional portion if needed.
-			if (input.startsWith("-")) {
-				fracNum = -fracNum;
+			if (!input.endsWith(".")) {
+				// Separate the real portion into two fractional parts.
+				int startIdx = decimalIdx + 1;
+				// We can parse up to 9 digits in an int.
+				int digitsToParse = 9 < maxDecDigits ? 9 : maxDecDigits;
+				int endIdx = input.length() < startIdx + digitsToParse ? input.length() : startIdx + digitsToParse;
+				String fracNumStr = input.substring(startIdx, endIdx);
+				String fracDenStr = "1" + "0".repeat(fracNumStr.length());
+				fracNum = Integer.parseInt(fracNumStr);
+				fracDen = Integer.parseInt(fracDenStr);
+				// Attempt to reduce the fractions via GCD.
+				long gcd = gcd(fracNum, fracDen);
+				fracNum /= gcd;
+				fracDen /= gcd;
+				// Raising E to anything higher than MAX_E_EXPONENT returns infinity.
+				// To prevent that, clamp the numerator to below it.
+				if (fracNum > MAX_E_EXPONENT) {
+					fracDen = (int)(fracDen * (long)MAX_E_EXPONENT / fracNum);
+					fracNum = MAX_E_EXPONENT;
+				}
+				// Negate the fractional portion if needed.
+				if (input.startsWith("-")) {
+					fracNum = -fracNum;
+				}
 			}
 		}
 		// Just return zero if the input is zero.
@@ -173,18 +175,15 @@ public class SinhLibraries {
 		if (abs(right) > abs(left)) {
 			return gcd(right, left);
 		}
-		long start = System.currentTimeMillis();
 		if (left == 0 && right == 0) {
 			return 0;
 		}
 		//long startNum = SinhLibraries.abs(left) > SinhLibraries.abs(right) ? left : right;
 		for (long i = left; i > 1; i--) {
 			if (left % i == 0 && right % i == 0) {
-				System.out.println("gcd took " + (System.currentTimeMillis() - start) + " ms");
 				return i;
 			}
 		}
-		System.out.println("gcd took " + (System.currentTimeMillis() - start) + " ms");
 		return 1;
 	}
 	

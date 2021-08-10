@@ -5,8 +5,8 @@
 \usepackage{fullpage} % changes the margin
 \usepackage{graphicx} %package to manage images
 \graphicspath{ {./images/} }
-\usepackage{algpseudocode}
 \usepackage{algorithm}
+\usepackage{algpseudocode}
 
 \begin{document}
 \begin{titlepage}
@@ -67,7 +67,7 @@ Our Team conducted a brainstorming session and referred several resources \cite{
 \textbf{Example of Algorithmicx (algpseudocode) Pseudo code Pattern}
 \\
 \begin{algorithm}
-\caption{Algorithmicx (algpseudocode) Pseudo code Pattern}
+\caption{Algorithmicx (algpseudocode) Pseudo code Pattern} \label{alg:cap}
 \begin{algorithmic}
 \Require $n \geq 0$
 \Ensure $y = x^n$
@@ -160,7 +160,7 @@ cos(x) = 1-x^2/2!+x^4/4!-x^6/6!+.....
     \EndIf \\      
 \Return{$SinVal$/$CosVal$}\Comment{$calculation for tan(x)$}
 \EndFunction
-\State $result \get $\Call{$tan(x)$}{}
+\State $result \get $ \Call{$tan(x)$}{}
 \end{algorithmic}
 \end{algorithm}
 \pagebreak
@@ -186,7 +186,7 @@ cos(x) = 1-x^2/2!+x^4/4!-x^6/6!+.....
 \textbf{ Software Engineering Processes}  \hfill \textbf{40167543} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
 \\
-\textbf{\\ \\ Algorithm : Montgomery's Ladder Technique}\cite{Peter} 
+\textbf{\\ \\ Algorithm 2: Montgomery's Ladder Technique} 
 \begin{itemize}
 \item Montgomerym's ladder technique addresses defence against side-channel attacks for exponentiation computation. \\\\
 The algorithm prevents the recovery of the exponent involved in the computation which could possibly benefit an attacker
@@ -203,7 +203,7 @@ It addresses the concern of MIM(Middle Man attack) observing the sequence of squ
 \hline
 \end{tabular} 
 
-\textbf{\\ \\ Algorithm : Taylor series}\\ \\Taylor series is a representation of a function as an infinite sum of terms that are calculated from the values of the function's derivatives at a single point.
+\textbf{\\ \\ Algorithm 3: Taylor series}\\ \\Taylor series is a representation of a function as an infinite sum of terms that are calculated from the values of the function's derivatives at a single point.
 \begin{equation} \label{evalpow}
 x^y= e^{y\ln x}
 \end{equation}
@@ -231,21 +231,21 @@ Very useful for derivations
 \hline
 Can be used to get theoretical error bounds &Truncation error tends to grow rapidly away from expansion point\\
 \hline
+Object Reference Model parameters embedded as variables & fsdfds\\
+\hline
 Power series can be inverted to yield the inverse function & Almost always not as efficient as curve fitting or direct approximation\\
 \hline
 \end{tabular} \\ \\ 
 \begin{algorithm}
 \caption{Montgomery's ladder Exponential Function}\label{exp3}
 \begin{algorithmic}[1]
-\Require $x\textsubscript{1} = x$; $x\textsubscript{2} = x^2$
-\For{$i=k-2$ to 0 $do$}
-\If{$n \textsubscript{i}=0$} 
-\State  $x\textsubscript{2}$ = $x\textsubscript{1}$ * $x\textsubscript{2}$ \Comment{\textit{$x\textsubscript{1}$ = $x\textsubscript{1}^2$}}
- \Else:
-\State $x\textsubscript{1} = x\textsubscript{1} * x\textsubscript{2}$   \Comment{\textit{$x2 = x\textsubscript{2}^2$}}
-\State \Return $x\textsubscript{1}$
- \EndIf
- \EndFor
+\Require $x\textsubscript{1} = $x; $x\textsubscript{2} = $x^2$
+\State For $i=k-2$ to 0 do$
+\If{n \textsubscript{i}=0} 
+\State  x2 = x1 * x2; x1 = x12
+\State else
+\State   x1 = x1 * x2; x2 = x22
+\Return x1
 \end{algorithmic}
 \end{algorithm}
 
@@ -289,6 +289,6 @@ Szasz Janos, The algorithmicx package
 \\\texttt{http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf}
 \bibitem{Peter} 
  Montgomery, Peter L. (1987). "Speeding the Pollard and Elliptic Curve Methods of Factorization" (PDF)
-\\\texttt{https://www.ams.org/journals/mcom/\\1987-48-177/S0025-5718-1987-0866113-7/S0025-5718-1987-0866113-7.pdf}
+\\\texttt{https://www.ams.org/journals/mcom/1987-48-177/S0025-5718-1987-0866113-7/S0025-5718-1987-0866113-7.pdf}
 \end{thebibliography}
 \end{document}

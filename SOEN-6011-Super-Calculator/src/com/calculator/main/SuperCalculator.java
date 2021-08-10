@@ -169,7 +169,7 @@ public class SuperCalculator  extends JFrame{
 				break;
 
 			case 2:// SinH
-				output = input - Double.parseDouble(str);
+				output = SinhLibraries.sinh(str);
 				textFieldInput.setText(Double.toString(output));
 				break;
 

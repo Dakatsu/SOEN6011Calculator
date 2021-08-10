@@ -31,7 +31,7 @@
 
 
 \textbf{PROBLEM - 4} \\
-Debugger and Quality Attributes\\
+Error Handling, Debugger and Quality Attributes\\
 \end{Large}
 \vspace*{0.9in}
 \rule{80mm}{0.1mm}\\
@@ -53,15 +53,8 @@ Manimaran Palani\\
 \begin{center}
 https://www.overleaf.com/project/610304de4e6b8d24f7c781b6\end{center}
 \end{titlepage}
-\tableofcontents
-\newpage
-\addcontentsline{toc}{section}{a) Description on Debugger that is used }
-\newpage
-
-\addcontentsline{toc}{section}{b \& c) Quality Attributes Description }
 \pagebreak
-\section*{Debugger and Quality Attributes Description}
-\section*{\centering{PROBLEM 3 - F2: $tan(x)$}}
+\section*{\centering{PROBLEM 4 - F2: $tan(x)$}}
 \normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Rokeya Begum Keya} \\
 \textbf{ Software Engineering Processes}  \hfill \textbf{40183615} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
@@ -69,15 +62,14 @@ https://www.overleaf.com/project/610304de4e6b8d24f7c781b6\end{center}
 
 \pagebreak
 
-\section*{\centering{PROBLEM 3 - F3: Hyperbolic Sine, $sinh(x)$}}
+\section*{\centering{PROBLEM 4 - F3: Hyperbolic Sine, $sinh(x)$}}
 \normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Kyle Taylor Lange} \\
 \textbf{ Software Engineering Processes}  \hfill \textbf{27627696} \\https://www.overleaf.com/project/610304de4e6b8d24f7c781b6
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
-\\\\\\
 
 \pagebreak
 
-\section*{\centering{PROBLEM 3 - F5}}
+\section*{\centering{PROBLEM 4 - F5}}
 \normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Sijie Min} \\
 \textbf{ Software Engineering Processes}  \hfill \textbf{401*****} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
@@ -85,17 +77,45 @@ https://www.overleaf.com/project/610304de4e6b8d24f7c781b6\end{center}
  \begin{center} Team please add your content here \end{center}
 \pagebreak
 
-\section*{\centering{PROBLEM 3 - F7 : \(x^y\)}}
+\section*{\centering{PROBLEM 4 - F7 : \(x^y\)}}
 \normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Manimaran Palani} \\
 \textbf{ Software Engineering Processes}  \hfill \textbf{40167543} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
 \\
-\begin{thebibliography}{}
-\bibitem{ReqView} 
-ReqView : Nykamp DQ: Requirements Specification Templates
-\\\texttt{https://www.reqview.com/doc/iso-iec-ieee-29148-templates}
-\bibitem{29148} 
-29148-2018-ISO/IEC/IEEE International Standard-Systems and software engineering-Life cycle processes-Requirements engineering,
-\\\texttt{https://standards.ieee.org/standard/29148-2018.html}
-\end{thebibliography}
+\section*{\textbf{Problem 4 - Description}}
+This section presents an overview of the source code of the Super Calculator application and the
+practices followed during the development.
+\section*{Error Handling}
+\section*{Debugger}
+Eclipse has a standard debugger which allows the program to open in debug mode.It supports both step by step debugging and break point based debugging.It offers, breakpoints , checkpoints and multiple views which enhance the experience of debugging.\\
+
+\textbf{Advantages}
+
+\begin{enumerate}
+  \item Can add any variable that one want to monitor to watch list.\
+  \item Eclipse debugger allows to remote debug a process on any other machine .\
+  \item One can move the current execution while executing . \
+  \item One can step in and out of the code base based on whether it matters or not.\
+  \item The debug perspective offers additional views that can be used to troubleshoot an application like Breakpoints, Variables, Debug, Console etc. \
+  \item The Eclipse Debugging Platform helps developers debug by providing buttons in the toolbar and key binding shortcuts to control program execution. \
+\end{enumerate}
+
+\textbf{Disadvantages}
+\begin{enumerate}
+\item Debugging with eclipse will become difficult when the execution  of a particular function is time bound or if there is usage of sleep statements inside the program. \
+\item It is difficult to monitor the programs that uses mutli threading . \
+\end{enumerate}
+\section*{Quality Attributes}
+Quality attributes assessed while implementing the algorithm  are :\\
+\begin{itemize}
+  \item \textbf{Correctness:} Since I used taylor series for approximating the power function , I had to test with different number of iterations ranging from 10 to 100 to come to a conclusion on the optimum number of iterations to ensure the correctness of the function.Based on my tests , I came to a conclusion that to have minimum difference between expected output and actual output , the number of iterations needed is 13.
+  \item \textbf{Efficiency:} As number of iterations increase, it increases the time of execution of the program but less no of iterations have a big impact on the correctness of the program.Hence to have a above average efficiency and a decent correctness I have chosen the no of iterations as 13.
+  \item \textbf{Maintainability:} I have refactored the code and included the comments to improve the maintainability and understandability of the code.Have a test file to ensure that any changes made doesn't have an effect on the existing functionality of the program.
+  \item \textbf{Robustness:} I have handled the situation where the user might give a wrong input such as a string in the place of a double .Hence the program doesn't crash and notifies the user with an appropriate error message.This increases the robustness of the program.
+  \item \textbf{Usability:} I am packaging my program in an executable jar file so that other users can use my file without any difficulties.This increases the usability of the program.
+\end{itemize}
+
+\newpage
+
+
 \end{document}

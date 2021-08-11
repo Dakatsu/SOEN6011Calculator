@@ -1,10 +1,26 @@
 package com.calculator.main;
 
+/**
+ * The Class PowerFunction related to the implementation of function F7, Power Function x^y.
+ * @author Manimaran
+ */
 public class PowerFunction {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-	public double calculate(double firstRealNumber, double secondRealNumber) {
+	/**
+	 * Calculate.
+	 *
+	 * @param firstRealNumber the first real number
+	 * @param secondRealNumber the second real number
+	 * @return the double
+	 */
+	public static double calculate(double firstRealNumber, double secondRealNumber) {
 		double result = 1.0;
-		result = powerBySquaring(result, firstRealNumber, secondRealNumber);
+		result = power(result, firstRealNumber, secondRealNumber);
 		final double baseFraction = secondRealNumber - (int) secondRealNumber;
 		if (baseFraction > 0.1f) {
 			final int result1 = (int) (Double.doubleToLongBits(firstRealNumber) >> 32);
@@ -14,7 +30,15 @@ public class PowerFunction {
 		return result;
 	}
 
-	double powerBySquaring(double power, double firstRealNumber, double secondRealNumber) {
+	/**
+	 * Power.
+	 *
+	 * @param power the power
+	 * @param firstRealNumber the first real number
+	 * @param secondRealNumber the second real number
+	 * @return the double
+	 */
+	static double power(double power, double firstRealNumber, double secondRealNumber) {
 		int exponent = (int) secondRealNumber;
 		double base = firstRealNumber;
 		while (exponent != 0) {

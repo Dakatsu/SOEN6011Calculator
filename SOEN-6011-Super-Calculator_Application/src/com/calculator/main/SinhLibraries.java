@@ -1,7 +1,9 @@
 package com.calculator.main;
 
 /**
- * A library of functions related to the implementation of F3, hyperbolic sine (sinh).
+ * A library of functions related to the implementation of F3, hyperbolic sine
+ * (sinh).
+ * 
  * @author Kyle
  */
 public class SinhLibraries {
@@ -9,32 +11,31 @@ public class SinhLibraries {
 	 * Euler's number.
 	 */
 	private static double E = 2.718281828459045;
-	
+
 	/**
 	 * The default number of decimal places to parse for the sinh function.
 	 */
 	private static int DEFAULT_MAX_DECIMAL_DIGITS = 9;
-	
+
 	/**
 	 * The maximum value E can be raised until its double becomes infinity.
 	 */
 	private static int MAX_E_EXPONENT = 709;
-	
-	
+
 	/**
 	 * The minimum value E can be raised until its double becomes zero.
 	 */
 	// Not used, but good to know.
-	//private static int MIN_E_EXPONENT = -744;
-	
+	// private static int MIN_E_EXPONENT = -744;
+
 	/**
-	 * Calculates the hyperbolic sine, or sinh: 1/2(e^x - e^-x).
-	 * Integer inputs are accurate up to 12 decimal places.
-	 * Real numbers vary in accuracy, with simpler rational parts
-	 *   return more accurate values.
-	 * Due to floating point math, any value higher than |709|
-	 *   will return infinity, indicating an unfathomably large number.
-	 * @param input The angle to calculate in string form.
+	 * Calculates the hyperbolic sine, or sinh: 1/2(e^x - e^-x). Integer inputs are
+	 * accurate up to 12 decimal places. Real numbers vary in accuracy, with simpler
+	 * rational parts return more accurate values. Due to floating point math, any
+	 * value higher than |709| will return infinity, indicating an unfathomably
+	 * large number.
+	 * 
+	 * @param input        The angle to calculate in string form.
 	 * @param maxDecDigits The maximum number of digits after the decimal to parse.
 	 * @return The result.
 	 */
@@ -81,7 +82,7 @@ public class SinhLibraries {
 				// Raising E to anything higher than MAX_E_EXPONENT returns infinity.
 				// To prevent that, clamp the numerator to below it.
 				if (fracNum > MAX_E_EXPONENT) {
-					fracDen = (int)(fracDen * (long)MAX_E_EXPONENT / fracNum);
+					fracDen = (int) (fracDen * (long) MAX_E_EXPONENT / fracNum);
 					fracNum = MAX_E_EXPONENT;
 				}
 				// Negate the fractional portion if needed.
@@ -99,8 +100,8 @@ public class SinhLibraries {
 			return intInput > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY;
 		}
 		// Calculate the integer portion.
-		double left = powInt(E, (int)intInput);
-		double right = powInt(E, (int)(-intInput));
+		double left = powInt(E, (int) intInput);
+		double right = powInt(E, (int) (-intInput));
 		// Handle the fractional math if necessary.
 		if (fracDen > 0) {
 			double leftRoot = root(fracDen, powInt(E, fracNum));
@@ -110,27 +111,27 @@ public class SinhLibraries {
 		}
 		return (left - right) * 0.5;
 	}
-	
+
 	/**
-	 * Calculates the hyperbolic sine, or sinh: 1/2(e^x - e^-x).
-	 * Integer inputs are accurate up to 12 decimal places.
-	 * Real numbers vary in accuracy, with simpler rational parts
-	 *   return more accurate values.
-	 * Due to floating point math, any value higher than |709|
-	 *   will return infinity, indicating an unfathomably large number.
-	 * This function will parse the default number of digits after the
-	 *   decimal point, represented by DEFAULT_MAX_DECIMAL_DIGITS.
+	 * Calculates the hyperbolic sine, or sinh: 1/2(e^x - e^-x). Integer inputs are
+	 * accurate up to 12 decimal places. Real numbers vary in accuracy, with simpler
+	 * rational parts return more accurate values. Due to floating point math, any
+	 * value higher than |709| will return infinity, indicating an unfathomably
+	 * large number. This function will parse the default number of digits after the
+	 * decimal point, represented by DEFAULT_MAX_DECIMAL_DIGITS.
+	 * 
 	 * @param input The angle to calculate in string form.
 	 * @return The result.
 	 */
 	public static double sinh(String input) throws NumberFormatException {
 		return sinh(input, DEFAULT_MAX_DECIMAL_DIGITS);
 	}
-	
+
 	/**
 	 * Raises a number by a positive or negative integer.
+	 * 
 	 * @param base The input to raise.
-	 * @param exp The exponent.
+	 * @param exp  The exponent.
 	 * @return The base raised to the power of the exponent.
 	 */
 	public static double powInt(double base, int exp) {
@@ -145,10 +146,11 @@ public class SinhLibraries {
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Calculates the nth root of a number to double precision.
-	 * @param n The radix to find.
+	 * 
+	 * @param n    The radix to find.
 	 * @param base The number whose root is desired.
 	 * @return The nth root of the base number.
 	 */
@@ -166,19 +168,20 @@ public class SinhLibraries {
 			// Otherwise, step toward the root's location.
 			if (resultSquared < base) {
 				result += step;
-			}
-			else {
+			} else {
 				result -= step;
 			}
 			step /= 2;
 		}
-		// Return our final result, whether we have the exact root or cannot step closer to it.
+		// Return our final result, whether we have the exact root or cannot step closer
+		// to it.
 		return result;
 	}
-	
+
 	/**
 	 * Returns the greatest common denominator of two long integers.
-	 * @param left The first number.
+	 * 
+	 * @param left  The first number.
 	 * @param right The second number.
 	 * @return The greatest common denominator, or zero if left or right are zero.
 	 */
@@ -189,7 +192,8 @@ public class SinhLibraries {
 		if (left == 0 && right == 0) {
 			return 0;
 		}
-		//long startNum = SinhLibraries.abs(left) > SinhLibraries.abs(right) ? left : right;
+		// long startNum = SinhLibraries.abs(left) > SinhLibraries.abs(right) ? left :
+		// right;
 		for (long i = left; i > 1; i--) {
 			if (left % i == 0 && right % i == 0) {
 				return i;
@@ -197,9 +201,10 @@ public class SinhLibraries {
 		}
 		return 1;
 	}
-	
+
 	/**
 	 * Returns the absolute value of a long integer.
+	 * 
 	 * @param input The input long integer.
 	 * @return The absolute value of the input.
 	 */

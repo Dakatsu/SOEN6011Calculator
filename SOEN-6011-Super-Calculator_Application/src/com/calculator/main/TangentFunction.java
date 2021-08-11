@@ -2,7 +2,12 @@ package com.calculator.main;
 
 public class TangentFunction {
 
-	public String calculate(double parseDouble) {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public static String calculate(double parseDouble) {
 		  return getTan(parseDouble);
 	}
 

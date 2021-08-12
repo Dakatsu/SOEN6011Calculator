@@ -1,5 +1,5 @@
 
-\documentclass[a4paper, 11pt]{report}
+\documentclass[letterpaper, 11pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{titlesec}
 \usepackage{fullpage} % changes the margin
@@ -8,6 +8,7 @@
 \usepackage{graphicx} %package to manage images
 \usepackage[linkcolor=red]{hyperref}
 \usepackage{paralist}
+\usepackage{subcaption}
 \graphicspath{ {./images/} }
 
 \begin{document}
@@ -36,7 +37,7 @@
 \textbf{PROBLEM - 1} \\
 Function Description \\
 \end{Large}
-\vspace*{0.9in}
+\vspace*{0.625in}
 \rule{80mm}{0.1mm}\\
 \vspace*{0.1in}
 \begin{large}
@@ -106,7 +107,15 @@ Malambo, Priestly. "Pre-Service Mathematics Teachers' Nature of Understanding of
 \\\\\\\\\\
 \normalsize{The function $sinh(x)$ is known as the hyperbolic sine, and it has the following formula \cite{sinh}. 
 $$sinh(x) \equiv \frac{1}{2}(e^x-e^{-x})$$
-The character $x$ is the only variable, as $e$ is a constant roughly equivalent to 2.71828 \cite{e}. Both the domain and co-domain of $sinh(x)$ is $\mathbb{R}$, i.e. (-$\infty$, +$\infty$). Positive values of $x$ trend toward +$\infty$, negative values of $x$ trend toward -$\infty$, and an input of 0 outputs 0.
+The character $x$ is the only variable, as $e$ is a constant roughly equivalent to 2.71828 \cite{e}.
+
+ \begin{figure}[SOEN_6011-Problem-1/images/desmos-graph-f3.png]
+ \centering
+ \includegraphics[width= 6cm]{SOEN_6011-Problem-1/images/desmos-graph-f3.png}
+  \caption{A graph of $y = sinh(x)$ generated from Desmos.com}
+\end{figure}
+
+Both the domain and co-domain of $sinh(x)$ is $\mathbb{R}$, i.e. (-$\infty$, +$\infty$). Positive values of $x$ trend toward +$\infty$, negative values of $x$ trend toward -$\infty$, and an input of 0 outputs 0.
 \\Just as the trigonometric functions sine and cosine relate to a unit circle \cite{circular}, their hyperbolic equivalents relate to the right branch of a unit hyperbola \cite{hyperbolic}. The x-coordinate of the right branch of the hyperbola at a given hyperbolic angle $a$ can be calculated with $cosh(a)$, and $sinh(a)$ will return the y-coordinate \cite{rectHyperbola}.}
 \begin{thebibliography}{}
 \bibitem{sinh}

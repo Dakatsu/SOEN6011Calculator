@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt]{report}
+\documentclass[letterpaper, 11pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{titlesec}
 \usepackage{fullpage} % changes the margin
@@ -33,7 +33,7 @@
 \textbf{PROBLEM - 6} \\
 Unit Test Cases\\
 \end{Large}
-\vspace*{0.9in}
+\vspace*{0.625in}
 \rule{80mm}{0.1mm}\\
 \vspace*{0.1in}
 \begin{large}
@@ -64,6 +64,185 @@ https://www.overleaf.com/project/610304de4e6b8d24f7c781b6\end{center}
 \textbf{ Software Engineering Processes}  \hfill \textbf{40183615} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
 \\\\\\
+\section*{Unit Test Case for F2 Function}
+The unit test cases for $tan(x)$ function is done using \textbf{JUnit 4} which are traceable to the requirements in problem-2.\\\\\\
+\textbf{Test Case : F2\_UnitTestCase\_1}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} & F2\_tanZeroCheck\_1\\
+\textbf{Requirement ID} & F2-R1 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}The user clicks the button "Tan" and gives an input 0 (degree) and
+\\then click result(=) button. \\
+\end{tabular} \\
+\textbf{Input(s) } & $tan(0)$ \\
+\textbf{Expected Output } & 0 \\
+\textbf{Actual Output } &   0 \\
+\textbf{Test Result } & Success \\
+\end{tabular}
+\\\\\\\\
+\textbf{Test Case : F2\_UnitTestCase\_2}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} & F2\_tanFortyCheck\_2\\
+\textbf{Requirement ID} & F2-R2 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}The user clicks the button "Tan" and gives an input 40 (degree) and
+\\then click result(=) button. \\
+\end{tabular} \\
+\textbf{Input(s) } & $tan(40)$ \\
+\textbf{Expected Output } & 0.83910101 \\
+\textbf{Actual Output } & 0.83910101 \\
+\textbf{Test Result } & Success \\
+\end{tabular}
+\\\\\\\\\\\\\\\\\\\\\
+\textbf{Test Case : F2\_UnitTestCase\_3}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} & F2\_tanNinetyCheck\_3\\
+\textbf{Requirement ID} & F2-R3 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}The user clicks the button "Tan" and gives an input 90 (degree) and
+\\then click result(=) button. \\
+\end{tabular} \\
+\textbf{Input(s) } & $tan(90)$ \\
+\textbf{Expected Output } & undefined \\
+\textbf{Actual Output } &
+undefined \\
+\textbf{Test Result } & Success \\
+\end{tabular}
+\\\\\\\\
+\textbf{Test Case : F2\_UnitTestCase\_4}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} & F2\_tanNegativeValueCheck\_4\\
+\textbf{Requirement ID} & F2-R4 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}The user clicks the button "Tan" and gives an input 95 (degree) and
+\\then click result(=) button. \\
+\end{tabular} \\
+\textbf{Input(s) } & $tan(95)$ \\
+\textbf{Expected Output } & -11.43005230 \\
+\textbf{Actual Output } &
+-11.43005230 \\
+\textbf{Test Result } & Success \\
+\end{tabular}
+\\\\\\\\
+\textbf{Test Case : F2\_UnitTestCase\_5}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} & F2\_tanNegativeNumberCheck\_5 \\
+\textbf{Requirement ID} & F2-R5 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}The user clicks the button "Tan" and gives an input -10 (degree) and
+\\then click result(=) button. \\
+\end{tabular} \\
+\textbf{Input(s) } & $tan(-10)$ \\
+\textbf{Expected Output } & -0.17723233 \\
+\textbf{Actual Output } &
+-0.17723233 \\
+\textbf{Test Result } & Success \\
+\end{tabular}
+\\\\\\\\\\\\\\\\\\\\\\\
+\textbf{Test Case : F2\_UnitTestCase\_6}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} & F2\_tanOneHundredAndEightyCheck\_6 \\
+\textbf{Requirement ID} & F2-R6 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}The user clicks the button "Tan" and gives an input 180 (degree) and
+\\then click result(=) button. \\
+\end{tabular} \\
+\textbf{Input(s) } & $tan(180)$ \\
+\textbf{Expected Output } & 0 \\
+\textbf{Actual Output } &   0 \\
+\textbf{Test Result } & Success \\
+\end{tabular}
+\\\\\\\\
+\textbf{Test Case : F2\_UnitTestCase\_7}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} & F2\_getRadCheck\_7 \\
+\textbf{Requirement ID} & F2-R7 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}To make sure that radian function in $tan(x)$ is working properly,
+\\I had to do the unit test of Rad(x) and gives an input for $x$ = 90 (degree).
+\end{tabular} \\
+\textbf{Input(s) } & $Rad(90)$ \\
+\textbf{Expected Output } & 1.57079633 \\
+\textbf{Actual Output } & 1.57079633 \\
+\textbf{Test Result } & Success \\
+\end{tabular}
+\\\\\\\\
+\textbf{Test Case : F2\_UnitTestCase\_8}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} & F2\_getRadOneHundredAndEightyCheck\_8\\
+\textbf{Requirement ID} & F2-R8 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}To make sure that radian function in $tan(x)$ is working properly,
+\\I had to do the unit test of Rad(x) and gives an input for $x$ = 180 (degree).
+\end{tabular} \\
+\textbf{Input(s) } & $Rad(180)$ \\
+\textbf{Expected Output } & 3.14159 \\
+\textbf{Actual Output } & 3.14159 \\
+\textbf{Test Result } & Success \\
+\end{tabular}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\textbf{Test Case : F2\_UnitTestCase\_9}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} & F2\_getSinZeroCheck\_9 \\
+\textbf{Requirement ID} & F2-R9 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}To make sure that $sin(x)$ function for $tan(x)$ is working properly,
+\\I had to do the unit test of $sin(x)$ function and gives an input for 0 (degree).
+\end{tabular} \\
+\textbf{Input(s) } & $sin(0)$ \\
+\textbf{Expected Output } & 0.0 \\
+\textbf{Actual Output } &   0.0 \\
+\textbf{Test Result } & Success \\
+\end{tabular}
+\\\\\\\\
+\textbf{Test Case : F2\_UnitTestCase\_10}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} & F2\_getSinFortyCheck\_10\\
+\textbf{Requirement ID} & F2-R10 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}To make sure that $sin(x)$ function for $tan(x)$ is working properly,
+\\I had to do the unit test of $sin(x)$ function and gives an input for 40 (degree).
+\end{tabular} \\
+\textbf{Input(s) } & $sin(40)$ \\
+\textbf{Expected Output } & 0.642788 \\
+\textbf{Actual Output } & 0.642788 \\
+\textbf{Test Result } & Success \\
+\end{tabular}
+\\\\\\\\
+\textbf{Test Case : F2\_UnitTestCase\_11}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} & F2\_getCosZeroCheck\_11\\
+\textbf{Requirement ID} & F2-R11 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}To make sure that $cos(x)$ function for $tan(x)$ is working properly,
+\\I had to do the unit test of $cos(x)$ function and gives an input for 0 (degree).
+\end{tabular} \\
+\textbf{Input(s) } & $cos(0)$ \\
+\textbf{Expected Output } & 1 \\
+\textbf{Actual Output } &   1 \\
+\textbf{Test Result } & Success \\
+         \end{tabular}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\textbf{Test Case : F2\_UnitTestCase\_12}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} & F2\_getCosFortyCheck\_12\\
+\textbf{Requirement ID} & F2-R12 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}To make sure that $cos(x)$ function for $tan(x)$ is working properly,
+\\I had to do the unit test of $cos(x)$ function and gives an input for 40 (degree).
+\end{tabular} \\
+\textbf{Input(s) } & $cos(40)$ \\
+\textbf{Expected Output } & 0.76604305 \\
+\textbf{Actual Output } & 0.76604305 \\
+\textbf{Test Result } & Success \\
+\end{tabular}
+\\\\\\\\\
+\begin{center}
+\includegraphics[width= 10cm]{UnitTestCaseF2}
+  \begin{center}
+Figure: Unit Testing results for tangent function $ (tan(x))$\end{center}
+\end{center}
+\\\\\\\\
 
 \pagebreak
 

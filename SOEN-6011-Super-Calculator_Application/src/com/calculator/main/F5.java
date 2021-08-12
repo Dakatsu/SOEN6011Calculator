@@ -16,8 +16,9 @@ public class F5 {
      * @param b base number,double type
      * @param x exponent number,double type
      * @return a*(b^x) double type
+     * @throws Exception
      */
-    public static double calculate(double a, double b, double x) {
+    public static double calculate(double a, double b, double x) throws Exception {
         if (a == 0) {
             return 0;
         }
@@ -64,8 +65,12 @@ public class F5 {
      * 
      * @param x double type
      * @return ln(x) double type
+     * @throws Exception
      */
-    public static double ln(double x) {
+    public static double ln(double x) throws Exception {
+        if (x <= 0) {
+            throw new Exception("math range error");
+        }
         double result = 0.0;
         while (x > 2) {
             result += LN2;
@@ -114,8 +119,9 @@ public class F5 {
      * @param a base number,double type
      * @param x exponent number,double type
      * @return a^x double type
+     * @throws Exception
      */
-    public static double power(double a, double x) {
+    public static double power(double a, double x) throws Exception {
         if (x == 0)
             return 1.0;
         if (a == 0)

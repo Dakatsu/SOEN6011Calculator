@@ -1,6 +1,5 @@
 
 \documentclass[letterpaper, 11pt]{report}
-\usepackage[utf8]{inputenc}
 \usepackage{titlesec}
 \usepackage{fullpage} % changes the margin
 \usepackage{amsmath}
@@ -77,7 +76,7 @@ https://www.overleaf.com/project/610304de4e6b8d24f7c781b6\end{center}
 \end{center}
 \begin{center}
 Graph of tangent function $ (tan(x))$\end{center}
- \normalsize{ \cite{test1} The tangent function is undefined when $x$ $=$ $\pi$ / 2 $+$ $n \pi$ (where, $n$ is integer) for which, $cos(x) = 0$. However, Tangent function does not have an amplitude. Inaddition, The graph intercept $x$-axis at $n\pi$ (where $n$ is integer) and in $y$-axis at $(0,0)$ point. The period of tangent function is $\pi$.
+ \normalsize{ \cite{test1} The tangent function is undefined when $x$ $=$ $\pi$ / 2 $+$ $n \pi$ (where, $n$ is integer) for which, $cos(x) = 0$. However, Tangent function does not have an amplitude. In addition, The graph intercept $x$-axis at $n\pi$ (where $n$ is integer) and in $y$-axis at $(0,0)$ point. The period of tangent function is $\pi$.
  }
  \\
  \subsection*{Range}
@@ -107,15 +106,15 @@ Malambo, Priestly. "Pre-Service Mathematics Teachers' Nature of Understanding of
 \\\\\\\\\\
 \normalsize{The function $sinh(x)$ is known as the hyperbolic sine, and it has the following formula \cite{sinh}. 
 $$sinh(x) \equiv \frac{1}{2}(e^x-e^{-x})$$
-The character $x$ is the only variable, as $e$ is a constant roughly equivalent to 2.71828 \cite{e}.
-
- \begin{figure}[SOEN_6011-Problem-1/images/desmos-graph-f3.png]
+The character $x$ is the only variable, as $e$ is a constant roughly equivalent to 2.71828 \cite{e}.}
+\\
+\begin{figure}[sinh]
  \centering
  \includegraphics[width= 6cm]{SOEN_6011-Problem-1/images/desmos-graph-f3.png}
   \caption{A graph of $y = sinh(x)$ generated from Desmos.com}
 \end{figure}
-
-Both the domain and co-domain of $sinh(x)$ is $\mathbb{R}$, i.e. (-$\infty$, +$\infty$). Positive values of $x$ trend toward +$\infty$, negative values of $x$ trend toward -$\infty$, and an input of 0 outputs 0.
+\\
+\normalsize{Both the domain and co-domain of $sinh(x)$ is $\mathbb{R}$, i.e. (-$\infty$, +$\infty$). Positive values of $x$ trend toward +$\infty$, negative values of $x$ trend toward -$\infty$, and an input of 0 outputs 0.
 \\Just as the trigonometric functions sine and cosine relate to a unit circle \cite{circular}, their hyperbolic equivalents relate to the right branch of a unit hyperbola \cite{hyperbolic}. The x-coordinate of the right branch of the hyperbola at a given hyperbolic angle $a$ can be calculated with $cosh(a)$, and $sinh(a)$ will return the y-coordinate \cite{rectHyperbola}.}
 \begin{thebibliography}{}
 \bibitem{sinh}
@@ -138,14 +137,24 @@ Rectangular Hyperbola, Wolfram MathWorld.
 
 \section*{\centering{PROBLEM 1 - F5}}
 \normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Sijie Min} \\
-\textbf{ Software Engineering Processes}  \hfill \textbf{401*****} \\
+\textbf{ Software Engineering Processes}  \hfill \textbf{40152234} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
-\\\\\\
-$y=a^x$ is called an exponential function, and it is one of the important basic elementary functions. For $y=ab^x$, a is a real number, $b^x$ is an exponential function, and a can be regarded as a scaling factor of the exponential function.
+\\
+ \subsection*{ Tangent Function,  \(y=ab^x\) } Generally, the  \(y=ab^x\)function (x is a variable, a is a constant and a>0, a≠1) is called an exponential function, and it is one of the important basic elementary functions. For  \(y=ab^x\), a is a real number, \(b^x\) is an exponential function, and a can be regarded as a scaling factor of the exponential function.
+\subsection*{ Graph,  \(y=ab^x\) } 
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=16cm]{F5fig1}
+    \caption{An image of a galaxy}
+    \label{fig:galaxy}
+\end{figure}
  \begin{center} 
 \end{center}
-\pagebreak
+\subsection*{ Range,  \(y=ab^x\) } 
+For the function\(y=ab^x\), the range of x is all real numbers. When a>0, 
 
+
+\pagebreak
 \newcommand{\R}{\mathbb{R}}
 \renewcommand{\labelitemi}{$\star$}
 \section*{\centering{PROBLEM 1 - F7 : \(x^y\)}}
@@ -191,9 +200,9 @@ WolframAlpha: Domain of exponentiation function,
 \\\texttt{https://www.wolframalpha.com/input/?i=x\%5Ey}
 \end{thebibliography}
 \newpage
-\addcontentsline{toc}{section}{b) Context of Use Model}I h
+\addcontentsline{toc}{section}{b) Context of Use Model}
 \section*{Context of Use Model}
-\normalsize{The users of the calculator shall be using it to calculate the result of one of the four functions on a number. This number shall be an integer or decimal, so the digits \textit{0-9} and the decimal point must be enterable by the user. The user shall be able to select the appropriate function they wish to use, and they shall be able to press a key or button to indicate that they have finished inputting the number and wish to have the answer computed.}
+\normalsize{The users of the calculator shall be using it to calculate the result of one of the four aforementioned functions on a number. This number shall be an integer or decimal, so the digits \textit{0-9} and the decimal point must be enterable by the user. The user shall be able to select the appropriate function they wish to use, and they shall be able to press a key or button to indicate that they have finished inputting the number and wish to have the answer computed. The calculator should return the result or a message that indicates why it was unable to do so.}
 \begin{center}
 \includegraphics[width=15cm]{context_diagram}
 \end{center}

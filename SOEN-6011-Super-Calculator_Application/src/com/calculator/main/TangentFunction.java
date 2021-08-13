@@ -82,7 +82,7 @@ public class TangentFunction {
 	
 
 	// tan function or method start here
-	public static String getTan (double x){
+	public static String getTan(double x){
 		double valueOfSinX=getSin(x);
 		double valueOfCosX=getCos(x);
 

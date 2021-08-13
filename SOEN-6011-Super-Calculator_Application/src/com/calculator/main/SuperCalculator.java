@@ -258,7 +258,7 @@ public class SuperCalculator extends JFrame {
                 calculation = 2;
                 arithmeticOperation(textFieldInput.getText());
                 input = Double.parseDouble(textFieldInput.getText());
-                label.setText(" SinHÃ‚â€œ(" + input + ")");
+                label.setText(" Sinh(" + input + ")");
               } catch (NumberFormatException ex) {
                 textError.setText("please input a real number");
                 textError.setVisible(true);
@@ -278,7 +278,8 @@ public class SuperCalculator extends JFrame {
             if (numericInputCheck(textFieldInput.getText())) {
               input = Double.parseDouble(textFieldInput.getText());
               calculation = 3;
-              textFieldInput.setText("");
+              arithmeticOperation(textFieldInput.getText());
+              //textFieldInput.setText("");
               label.setText(input + "^");
             } else {
               textError.setText(VALIDATION_MESSAGE);
@@ -298,7 +299,8 @@ public class SuperCalculator extends JFrame {
             if (numericInputCheck(textFieldInput.getText())) {
               input = Double.parseDouble(textFieldInput.getText());
               calculation = 4;
-              textFieldInput.setText("");
+              arithmeticOperation(textFieldInput.getText());
+              //textFieldInput.setText("");
               label.setText(input + "^");
             } else {
               textError.setText(VALIDATION_MESSAGE);

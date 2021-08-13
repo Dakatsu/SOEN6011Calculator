@@ -30,7 +30,7 @@ public final class SinhLibraries {
 	 * Hidden constructor for utility class.
 	 */
 	private SinhLibraries() {
-		
+
 	}
 
 	/**
@@ -83,9 +83,9 @@ public final class SinhLibraries {
 						? input.length()
 						: startIdx + digitsToParse;
 				String fracNumStr = input.substring(startIdx, endIdx);
-				String fracDenStr = "1" + "0".repeat(fracNumStr.length());
 				fracNum = Integer.parseInt(fracNumStr);
-				fracDen = Integer.parseInt(fracDenStr);
+				// Denominator is just the power of 10 larger than the numerator
+				fracDen = (int)powInt(10, fracNumStr.length());
 				// Attempt to reduce the fractions via GCD.
 				long gcd = gcd(fracNum, fracDen);
 				fracNum /= gcd;

@@ -1,5 +1,5 @@
 
-\documentclass[a4paper, 11pt]{report}
+\documentclass[letterpaper, 11pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{titlesec}
 \usepackage{fullpage} % changes the margin
@@ -27,14 +27,14 @@
 \begin{Large}
 \textbf{SUPER CALCULATOR} \\
 \end{Large}
-\vspace*{0.9in}
+\vspace*{0.625in}
 \begin{Large} 
 
 
 \textbf{PROBLEM - 2} \\
 Requirements\\\footnotesize{ISO/IEC/IEEE} 29148 Standard \\
 \end{Large}
-\vspace*{0.9in}
+\vspace*{0.625in}
 \rule{80mm}{0.1mm}\\
 \vspace*{0.1in}
 \begin{large}
@@ -62,7 +62,7 @@ https://www.overleaf.com/project/610304de4e6b8d24f7c781b6\end{center}
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
 \\\\\\
 \section*{Assumption:} 
-The user will give the value of $x$ in $tan(x)$ function in (Degree) real number.The value of $tan(x)$ will be shown upto eight decimals.
+The user will give integer(Degree) value of $x$ in $tan(x)$ function. The value of $tan(x)$ function will be calculated in radian.
 \\\
 \section*{Requirements:}\cite{ReqView}\cite{29148}\\
 The current section describes the requirements to implement the function $tan(x)$.
@@ -80,7 +80,7 @@ The current section describes the requirements to implement the function $tan(x)
 \textbf{Type} & Functional \\
 \textbf{Difficulty} & Medium \\
 \textbf{Verification Method} & F2\_tanZeroCheck\_1\\                  \end{tabular}
-\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \textbf{Requirement Id : F2-R2}\\\\
 \begin{tabular}{ll}
 \textbf{Overview} & $x = (Positive\ Degree) $ in to the $tan(x)$ function. \\
@@ -94,8 +94,8 @@ The current section describes the requirements to implement the function $tan(x)
 \textbf{Priority} & High \\
 \textbf{Type} & Functional \\
 \textbf{Difficulty} & Medium \\
-\textbf{Verification Method} & F2\_tanFortyCheck\_2\\                                         \end{tabular}
-\\\\\\\\\\\\\\\\\\\\\
+\textbf{Verification Method} & F2\_tanFortyCheck\_2\\           \end{tabular}
+\\\\\\\
 \textbf{Requirement Id : F2-R3}\\\\
 \begin{tabular}{ll}
 \textbf{Overview} & $x = 90^\circ $ in to the $tan(x)$ function \\
@@ -125,7 +125,7 @@ The current section describes the requirements to implement the function $tan(x)
 \textbf{Type} & Functional \\
 \textbf{Difficulty} & Medium \\
 \textbf{Verification Method} &F2\_tanNegativeValueCheck\_4\\                  \end{tabular}
-\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\
 \textbf{Requirement Id : F2-R5}\\\\
 \begin{tabular}{ll}
 \textbf{Overview} & $x = (Negative\ Degree) $ in to the $tan(x)$ function\\
@@ -168,8 +168,8 @@ The current section describes the requirements to implement the function $tan(x)
 \textbf{Type} & Functional \\
 \textbf{Difficulty} & Medium \\
 \textbf{Verification Method} & F2\_getRadCheck\_7\\    
-\end{tabular}
-\\\\\\\\\
+          \end{tabular}
+\\\\\\\\\\\\\\\\\\\
 \textbf{Requirement Id : F2-R8}\\\\
 \begin{tabular}{ll}
 \textbf{Overview} & $x = 180^\circ $ in to the $Rad(x)$  \\
@@ -183,7 +183,7 @@ The current section describes the requirements to implement the function $tan(x)
 \textbf{Type} & Functional \\
 \textbf{Difficulty} & Medium \\
 \textbf{Verification Method} & F2\_getRadOneHundredAndEightyCheck\_8\\          \end{tabular}
-\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\
 \textbf{Requirement Id : F2-R9}\\\\
 \begin{tabular}{ll}
 \textbf{Overview} & $x = 0^\circ $ in to the $sin(x)$ function \\
@@ -226,7 +226,7 @@ The current section describes the requirements to implement the function $tan(x)
 \textbf{Type} & Functional \\
 \textbf{Difficulty} & Medium \\
 \textbf{Verification Method} & F2\_getCosZeroCheck\_11\\                  \end{tabular}
-\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\
 \textbf{Requirement Id : F2-R12}\\\\
 \begin{tabular}{ll}
 \textbf{Overview} & $x = (Positive\ Degree) $ in to the $cos(x)$ function. \\
@@ -258,18 +258,91 @@ The current section describes the requirements to implement the function $tan(x)
 
 \section*{\centering{PROBLEM 2 - F3: Hyperbolic Sine, $sinh(x)$}}
 \normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Kyle Taylor Lange} \\
-\textbf{ Software Engineering Processes}  \hfill \textbf{27627696} \\https://www.overleaf.com/project/610304de4e6b8d24f7c781b6
+\textbf{ Software Engineering Processes}  \hfill \textbf{27627696} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
-\\\\\\
+\\
+\section{Function Requirements}
+\section*{Requirements and Assumptions}
+The current section describes the requirements and assumptions to implement the function $sinh(x)$.
+\\\\
+\textbf{Explicit Assumptions:}  For a value to be \textit{accurate}, it shall be correct up to a specific number of decimal places. This value will be based on balancing accuracy with computation speed. Above a certain absolute input value, the function may return $\pm infinity$ due to the exponential nature of the function going beyond the range of a double floating point.
+\\\\
+
+\textbf{Requirement ID: F3-R1}\\\\
+\begin{tabular}{ll}
+\textbf{Overview}            & Input $x$ into $sinh(x)$ function.
+\\\textbf{Version}             & 1
+\\\textbf{Description}         & \begin{tabular}[c]{@{}l@{}}If the $sinh(x)$ function as given in Problem 1 receives an\\ integer or decimal input $x$, the system shall return an accurate value.\end{tabular}
+\\\textbf{Owner}               & Kyle Taylor Lange
+\\\textbf{Priority}            & High
+\\\textbf{Type}                & Functional
+\\\textbf{Difficulty}          & High
+\\\textbf{Verification Method} &                                                                     
+\end{tabular}
+\\\\
+
+\textbf{Requirement ID: F3-R2}\\\\
+\begin{tabular}{ll}
+\textbf{Overview}            & Availability
+\\\textbf{Version}             & 1
+\\\textbf{Description}         & \begin{tabular}[c]{@{}l@{}}The system may provide the calculation in F3-R1\\ to the user within three seconds.\end{tabular}
+\\\textbf{Owner}               & Kyle Taylor Lange
+\\\textbf{Priority}            & High
+\\\textbf{Type}                & Performance
+\\\textbf{Difficulty}          & Medium
+\\\textbf{Verification Method} &                                                                     
+\end{tabular}
 
 \pagebreak
 
 \section*{\centering{PROBLEM 2 - F5}}
 \normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Sijie Min} \\
-\textbf{ Software Engineering Processes}  \hfill \textbf{401*****} \\
+\textbf{ Software Engineering Processes}  \hfill \textbf{40152234} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
 \\\\\\\\\\
- \begin{center} Team please add your content here \end{center}
+\section*{Requirements and Assumptions}\\
+\\The user will give value ofa,b and x   .a,b can be both integer and decimal, x is integer
+
+\textbf{Requirement Id : F5-R1}\\\\
+\begin{tabular}{ll}
+\textbf{Overview} & 	Sets a,b, then input x into  \(y=ab^x\) \\
+\textbf{Version} & 1.0 \\
+\textbf{Description} & 
+\begin{tabular}[c]{@{}l@{}} If a is set to 0, the output result is 0. If the x input is 0, the return result is equal to a.
+\end{tabular} \\
+\textbf{Owner} & Sijie Min \\
+\textbf{Priority} & High \\
+\textbf{Type} & Functional \\
+\textbf{Difficulty} & Medium \\
+   \end{tabular}
+
+\textbf{Requirement Id : F5-R2}\\\\
+\begin{tabular}{ll}
+\textbf{Overview} & 	Sets a,b, then input x into  \(y=ab^x\) \\
+\textbf{Version} & 1.0 \\
+\textbf{Description} & 
+\begin{tabular}[c]{@{}l@{}} x can be entered as a positive number or a negative number.
+\end{tabular} \\
+\textbf{Owner} & Sijie Min \\
+\textbf{Priority} & High \\
+\textbf{Type} & Functional \\
+\textbf{Difficulty} & Medium \\
+   \end{tabular}
+
+\textbf{Requirement Id : F5-R3}\\\\
+\begin{tabular}{ll}
+\textbf{Overview} & 	Availability \\
+\textbf{Version} & 1.0 \\
+\textbf{Description} & 
+\begin{tabular}[c]{@{}l@{}} Avoid calculating x times of multiplications, but reduce the number of multiplications \\to approximately \(\sqrt x\)  times to increase the running speed.
+\end{tabular} \\
+\textbf{Owner} & Sijie Min \\
+\textbf{Priority} & High \\
+\textbf{Type} & Functional \\
+\textbf{Difficulty} & High \\
+   \end{tabular}
+
+
 \pagebreak
 
 \section*{\centering{PROBLEM 2 - F7 : \(x^y\)}}

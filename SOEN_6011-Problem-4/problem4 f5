@@ -1,0 +1,37 @@
+\section*{\centering{PROBLEM 4 - F5}}
+\normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Sijie Min} \\
+\textbf{ Software Engineering Processes}  \hfill \textbf{40152234} \\
+\hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
+\\\\\\\\\\
+
+
+ \section*{{Error Handling}}
+\\The regular handling mechanism allows the program to deal with the exception in accordance with the pre-set exception handling logic of the code when an exception occurs, so that the program can return to normal and continue execution as much as possible, and keep the code clear.
+\\For function 5, the constant b cannot be negative, and for the ln(x) function, x should be greater than 0. When the input of the function is out of the allowable range, the function will throw an exception, and the exception message is "math range error". When using function 5, you need to use try...catch... to handle the exception.
+\section*{{Debugger}}
+\\Used Eclipse to write and debug code. Eclipse's built-in debugger provides a convenient means of debugging. You can find bugs by debugging with breakpoints and monitoring variables. It can also viewed the method call relationship and the thread method call stack.
+ \begin{figure}[htp]
+    \centering
+    \includegraphics[width=16cm]{F5p4}
+    \caption{The check style of F5}
+    \label{fig:galaxy}
+\end{figure}
+ \begin{center} 
+
+
+ 
+ 
+ 
+ 
+ \end{center}
+  \begin{thebibliography}{}
+ 
+\bibitem{test1}
+Mike Spivey. "The fuzz Manual" Manual and software copyright .J. M. Spivey 1988, 1992, 2000
+
+
+\end{thebibliography}   
+ 
+ 
+ 
+\pagebreak

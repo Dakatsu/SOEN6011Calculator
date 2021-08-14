@@ -1,5 +1,5 @@
 
-\documentclass[a4paper, 11pt]{report}
+\documentclass[letterpaper, 11pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{titlesec}
 \usepackage{fullpage} % changes the margin
@@ -36,7 +36,7 @@
 \textbf{PROBLEM - 3} \\
 Pseudo-code and Algorithms\\
 \end{Large}
-\vspace*{0.9in}
+\vspace*{0.625in}
 \rule{80mm}{0.1mm}\\
 \vspace*{0.1in}
 \begin{large}
@@ -160,49 +160,116 @@ cos(x) = 1-x^2/2!+x^4/4!-x^6/6!+.....
     \EndIf \\      
 \Return{$SinVal$/$CosVal$}\Comment{$calculation for tan(x)$}
 \EndFunction
-\State $result \get $\Call{$tan(x)$}{}
+\State $result \gets $\Call{$tan(x)$}{}
 \end{algorithmic}
 \end{algorithm}
 \pagebreak
 
 \section*{\centering{PROBLEM 3 - F3: Hyperbolic Sine, $sinh(x)$}}
 \normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Kyle Taylor Lange} \\
-\textbf{ Software Engineering Processes}  \hfill \textbf{27627696} \\https://www.overleaf.com/project/610304de4e6b8d24f7c781b6
+\textbf{ Software Engineering Processes}  \hfill \textbf{27627696} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
 \\\\\\
 
+\normaltext{Exponentiation of integers is simple to implement in an algorithm, with 1 being multiplied or divided by a number ($e$) a certain number of times. Exponentation of non-real integer numbers is much more difficult as both methods considered to calculate them involve calculating roots of numbers. Calculating the root requires repeatedly testing guesses as to whether raising them to the $n^th$ exponent will equal input number, and it can theoretically take infinite iterations to find the root. As such, there must be a balance between the precision of this value and the time spent calculating it. \\\\
+One method for calculating real exponents involves the relation of the natural logarithm, $ln$ $x$, with the exponential function, $e^x$. The other attempts to convert irrational real exponents into rational ones, e.g. $e^\frac{a}{b}$, where $x^a$ is divided by $\sqrt[b]{x}$. This latter method was chosen as it is conceptually easier to comprehend and implement in code, and issues with computation time or accuracy can be adjusted by changing how well the rational number approximates the real number. \\\\
+Given the above, the subordinate functions required to calculate $sinh(x)$ are the power function and the square root function. Additionally, a function to find the greatest common denominator can help reduce fractions to make them less intensive to compute. An absolute value function can also be created for simplicity.}
+
+\begin{algorithm}
+\caption{Hyperbolic Sine}
+\begin{algorithmic}
+\Function{Sinh}{$input$}
+    \If{$input = 0$}
+        \Return{0}
+    \EndIf
+    \State{$intPart \gets input \div 1$, $fracNum \gets input$ $mod$ $1$}\Comment{Split into integral and real parts.}
+    \State{$fracDen \gets 1$}
+    \While{$fracNum > fracDen$}
+        \State{$fracDen \gets fracDen \times 10$}
+    \EndWhile \\
+    \Call{GCD}{$fracNum$, $fracDen$}
+    \State{$left \gets \Call{Power}{e, intPart}$, $right \gets \Call{Power}{e, -intPart}$}
+    \If{$fracNum > 0$}
+        \State{$numPower \gets \Call{Power}{e, fracNum}$}
+        \State{$leftRoot = \Call{Root}{fracDen, numPower}$}
+        \State{$left \gets left \times leftRoot$}
+        \State{$numCalc \gets \Call{Power}{e, -numPower}$}
+        \State{$rightRoot = \Call{Root}{fracDen, numCalc}$}
+        \State{$right \gets right \times rightRoot$}
+    \EndIf \\
+    \Return{$\frac{left - right}{2}$}
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Root}
+\begin{algorithmic}
+\Function{Root}{$n$, $base$}
+\State{$step \gets 0$}
+    \If{$base$ \textless $1$}
+        \State{$step$ \gets $\frac{1 - base}{2}$}
+    \Else
+        \State{$step$ \gets $\frac{base}{2}$ $+$ $0.5$}
+    \EndIf
+    \State{$result \gets base$}
+    \While{$step \neq 0$}\Comment{Not equal $\pm$ some accuracy value.}
+        \State{$resultSquared \gets \Call{Power}{result, n}$}
+        \If{$resultSquared = base$}
+            \State{break}
+        \EndIf
+        \If{$resultSquared \textless base$}
+            \State{$result \gets result + step$}
+        \Else
+            \State{$result \gets result - step$}
+        \EndIf
+        \State{$step \gets \frac{step}{2}$}
+    \EndWhile \\
+    \Return{$result$}
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Power}
+\begin{algorithmic}
+\Function{Power}{$base$, $exp$}
+    \State{$result \gets 1$}
+    \For{$i \gets 0$ to $|exp|$}
+        \If{$exp > 0$}
+            \State{$result \gets result \times base$}
+        \Else
+            \State{$result \gets \frac{result}{base}$}
+        \EndIf \\
+    \Return $result$
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Greatest Common Denominator}
+\begin{algorithmic}
+\Require $x$ $\in$ \mathbb{Z} AND $y$ $\in$ \mathbb{Z}
+\Function{GCD}{$x$, $y$}
+    \If{$|y| > |x|$}
+        \Call{GCD}{y, x}
+    \EndIf
+    \If{$x$ = 0 AND $y$ = 0}
+        \Return{0}
+    \EndIf
+    \For{$i \gets x to 0$}
+        \If{$x$ $mod$ $i$ $=$ $0$ AND $y$ $mod$ $i$ $=$ $0$}
+            \Return{$i$}
+        \EndIf
+    \EndFor \\
+    \Return{1}
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
 \pagebreak
 
-\section*{\centering{PROBLEM 3 - F5}}
-\normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Sijie Min} \\
-\textbf{ Software Engineering Processes}  \hfill \textbf{401*****} \\
-\hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
-\\\\\\\\\\
- \begin{center} Team please add your content here 
- \\pseudo code
- \\Algorithm f5(a,b,x)
-\\Double type a and b,integer type x
-	\\if x=0 then
-	\\	return a
-\\	c=x
-	\\if c<0 then
-	\\	c=-c
-\\	r=b
-\\	y=1
-\\	while c>0 do
-	\\	if c%2=0 then
-	\\		c=c/2
-	\\		r=r*r
-	\\	else
-	\\		c=c-1
-	\\		y=y*r
-\\	if x<0 then
-\\		return a/y
-\\	else
-\\		return a*y
- 
- \end{center}
-\pagebreak
+
 
 \section*{\centering{PROBLEM 3 - F7 : \(x^y\)}}
 \normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Manimaran Palani} \\
@@ -314,4 +381,93 @@ Szasz Janos, The algorithmicx package
  Montgomery, Peter L. (1987). "Speeding the Pollard and Elliptic Curve Methods of Factorization" (PDF)
 \\\texttt{https://www.ams.org/journals/mcom/\\1987-48-177/S0025-5718-1987-0866113-7/S0025-5718-1987-0866113-7.pdf}
 \end{thebibliography}
+\pagebreak
+
+\section*{\centering{PROBLEM 3 - F5}}
+\\
+
+
+\normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Sijie Min} \\
+\textbf{ Software Engineering Processes}  \hfill \textbf{40152234} \\
+\hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
+\\\\\\\\\\
+
+\\\\The difficulty in implementing function 5 is to implement b$^$x.
+\\When X is an integer, there are two alternatives. One is direct accumulation. The advantage is that the code is easy to implement, but the disadvantage is that the running efficiency is not high (x times of multiplications are required); the second is to reduce the number of multiplications by decomposing the exponent. The advantage is that it runs more efficiently, but the disadvantage is that the code implementation is more complicated. For function 5, use the second method to achieve.
+\\When X is a decimal, use Taylor series, because b\(^\)x=e\(^\)xlnb, Taylor series can calculate ln(x) and e\(^\)x, and can provide high-precision results. The disadvantage is that the function approximation requires a large amount of calculation.
+C)
+When x is an integer, if x is an even number, b\(^\)x can be decomposed into (b\(^\)2)\(^\)(x/2); if x is an odd number, b\(^\)x can be decomposed into 〖b×(b\(^\) 2)〗\(^\)((x-1)/2). Continue to decompose until the exponent part is 1.
+When x is a decimal, it can be calculated according to the following formula
+\\When x is a decimal, it can be calculated according to the following formula:
+\\(1) ab$^$x=ae$^$xlnb
+\\(2) ex = 1 + x/1! + x2/2! + x3/3! + ......	
+\\(3) ln(1 + x) = x − x2/2 + x3/3 − ......
+\\\\\\
+\textbf{ Pseudo code Pattern}
+\\
+\begin{algorithm}
+\caption{Power function whose exponent part is an integer}
+\begin{algorithmic}
+\Require $retVal=1 And exp=y And tmp=x$
+
+\State $function Explicit FORM(power(x,y))$
+\If{exp$< $0}
+
+\State $exp=-exp$
+\EndIf
+
+\While{$ exp>0 $}
+\If{exp$\%$2==0}
+    \State $exp=exp/2$
+    \State $tmp=tmp*tmp$  
+\Else
+    \State $y \gets y \times X$
+    \State $retVal=retVal*tmp$
+\EndIf
+\EndWhile
+\If{y$< $0}
+
+\State $retVal=1/retVal$ 
+\State $return retVal$
+
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Taylor Series}
+\begin{algorithmic}
+\Require $retVal=1 And tmp=1 And i=1$
+
+\State $function Explicit FORM(ex(x))$
+\For{$ i←i+1$}
+
+\State $tmp=tmp*i$
+\State $retVal=retVal+power(x,i)/tmp$
+\EndFor \\
+\Return {retVal}\\
+\EndFunction
+\Require $retVal=0 And tmp=1 And And i=1 And x∈(0,2]$
+\State $function Explicit FORM(lnBase(x))$
+\For{$ i←i+1$}
+
+\State $retVal=retVal+tmp*power(x,i)/i$
+\State $tmp=-tmp$
+\EndFor \\
+\Return {retVal}\\
+\EndFunction
+
+\Require $retVal=0 And LN2=ln(2)$
+\State $function Explicit FORM(ln(x))$
+
+\While{$ x>2 $}
+
+    \State $retVal=retVal+LN2$
+    \State $x=x/2$  
+\EndWhile
+    \State $retVal=retVal+lnBase(x)$\\
+\Return {retVal}
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
 \end{document}

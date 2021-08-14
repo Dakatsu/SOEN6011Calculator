@@ -8,6 +8,7 @@ public class F5 {
     public static final double E = 2.7182818284590451;
     public static final int EXPANSION = 60;// default Taylor expansion times
     public static final double LN2 = 0.6931471805599453;// value of ln(2)
+    public static final double EPSON = 0.0000001;// allowable error
 
     /**
      * Calculate the value of a*(b^x)
@@ -126,6 +127,8 @@ public class F5 {
             return 1.0;
         if (a == 0)
             return 0.0;
+        if (F5.abs(x - (int) x) < EPSON)
+            return power(a, (int) x);
         double exp = x * ln(a);// If the value of exp is large, substituting exp into the function
                                // ex may cause the calculation to overflow.
         int integer = (int) exp;

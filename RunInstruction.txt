@@ -1,0 +1,1 @@
+Run SuperCalculator.java/SuperCalculator.jar to run the program made by team C.

@@ -6,14 +6,12 @@ import com.calculator.main.PowerFunction;
 import com.calculator.main.SuperCalculator;
 import org.junit.Test;
 
-/**
- * The Class PowerFunctionTest.
- */
+
+
+/** The Class PowerFunctionTest. */
 public class PowerFunctionTest {
 
-  /**
-   * Numeric input check test.
-   */
+  /** Numeric input check test. */
   @Test
   public void numericInputCheckTest() {
     assertEquals(true, SuperCalculator.numericInputCheck("123"));

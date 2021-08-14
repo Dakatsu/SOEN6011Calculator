@@ -248,18 +248,119 @@ Figure: Unit Testing results for tangent function $ (tan(x))$\end{center}
 
 \section*{\centering{PROBLEM 6 - F3: Hyperbolic Sine, $sinh(x)$}}
 \normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Kyle Taylor Lange} \\
-\textbf{ Software Engineering Processes}  \hfill \textbf{27627696} \\https://www.overleaf.com/project/610304de4e6b8d24f7c781b6
+\textbf{ Software Engineering Processes}  \hfill \textbf{27627696} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
 \\\\\\
+A variety of JUnit 5 tests were created in $SinhLibrariesTest.java$ to test the quality of the $sinh$ function. These were made as atomically as possible per guidelines on writing unit tests. For example, one unit test ensures that $sinh(0)$ returns 0, while another ensures that $sinh(1)$ returns ~1.175. Despite it not being explicitly required, the subordinate functions also have unit tests. This is valuable since the $sinh$ function largely depends on them for its level of accuracy, and it may allow an incorrect result for $sinh$ to be immediately traced to a change in a subordinate function. \\\\
+
+There were two requirements, which quickly summarized are that the function returns accurate values according to the equation in problem 1, and that the function may return the result within three seconds. Only this former requirement has unit tests since it is inadvisable to make unit tests to ensure something happens within a specific period of time. Tests that do so could randomly fail or differ between machines, which goes against the purpose and guidelines for writing unit tests.
 
 \pagebreak
 
 \section*{\centering{PROBLEM 6 - F5}}
 \normalsize {SOEN 6011 - Summer 2021} \hfill \textbf{Sijie Min} \\
-\textbf{ Software Engineering Processes}  \hfill \textbf{401*****} \\
+\textbf{ Software Engineering Processes}  \hfill \textbf{40152234} \\
 \hfill Repository address : https://github.com/Dakatsu/SOEN6011Calculator
 \\\\\\\\\\
- \begin{center} Team please add your content here \end{center}
+\section*{Unit Test Case for F5 Function}
+The unit test cases for $ab^x$ function is done using related functions of \textbf{JUnit 4} \\\\\\
+ \begin{center}
+\textbf{Test Case : F5\_UnitTestCase\_1}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} &\ F5testF5\\\
+\textbf{Requirement ID} & F5-R1 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}Test $ab^x$. a is set to 0, check the output result; x input is 0, check the output result
+\end{tabular} \\
+\textbf{Input(s) } & a=0,b=19,x=2; a=2,b=10,x=0 \\
+\textbf{Expected Output } & 0; 2 (there are 2 sets of inputs so 2 sets of outputs,0 and 2)\\
+\textbf{Actual Output } & 0; 2(there are 2 sets of inputs so 2 sets of outputs,0 and 2) \\
+\textbf{Test Result } & Success \\
+\end{tabular}
+  \end{center}
+ 
+ \begin{center}
+\textbf{Test Case : F5\_UnitTestCase\_2}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} &\ F5testF5PositiveX\\\
+\textbf{Requirement ID} & F5-R2 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}Test $ab^x$.the input of x is a positive number, check the output result
+\end{tabular} \\
+\textbf{Input(s) } & a=1.0,b=3.4,x=5.6 \\
+\textbf{Expected Output } & 946.8516393\\
+\textbf{Actual Output } & 946.8516393 \\
+\textbf{Test Result } & Success \\
+\end{tabular} 
+  \end{center}
+ 
+\begin{center}
+\textbf{Test Case : F5\_UnitTestCase\_3}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} &\ F5testF5NegativeX\\\
+\textbf{Requirement ID} & F5-R3 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}Test $ab^x$.the input of x is a negative number, check the output result
+\end{tabular} \\
+\textbf{Input(s) } & a=1.0,b=3.4,x=-5.6 \\
+\textbf{Expected Output } & 0.0021122\\
+\textbf{Actual Output } & 0.0021122 \\
+\textbf{Test Result } & Success \\
+\end{tabular} 
+  \end{center} 
+\pagebreak 
+
+\textbf{Test Case : F5\_UnitTestCase\_4}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} &\ F5testF5NegativeX\\\
+\textbf{Requirement ID} & F5-R4 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}Test power(double,int) function
+\end{tabular} \\
+\textbf{Input(s) } & power(1.6,7) \\
+\textbf{Expected Output } & 26.8435456\\
+\textbf{Actual Output } & 26.8435456 \\
+\textbf{Test Result } & Success \\
+\end{tabular} 
+ 
+  
+
+\textbf{Test Case : F5\_UnitTestCase\_4}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} &\ F5testF5NegativeX\\\
+\textbf{Requirement ID} & F5-R5 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}Test power(double,int) function
+\end{tabular} \\
+\textbf{Input(s) } & power(1.6,7) \\
+\textbf{Expected Output } & 26.8435456\\
+\textbf{Actual Output } & 26.8435456 \\
+\textbf{Test Result } & Success \\
+\end{tabular} 
+
+
+\textbf{Test Case : F5\_UnitTestCase\_5}\\\\
+\begin{tabular}{ll}
+\textbf{Test Case ID} &\ F5testDecimalPower\\
+\textbf{Requirement ID} & F5-R6 \\
+\textbf{Action} & 
+\begin{tabular}[c]{@{}l@{}}Test power(double,double) function
+\end{tabular} \\
+\textbf{Input(s) } & power(5.6, 7.5) \\
+\textbf{Expected Output } & 408705.2369134\\
+\textbf{Actual Output } & 408705.2369134 \\
+\textbf{Test Result } & Success \\
+\end{tabular} 
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=16cm]{F5p6}
+    \caption{Figure: Unit Testing results for function $ab^x$}
+    \label{fig:galaxy}
+\end{figure}
+
+
+  
+  
 \pagebreak
 
 \section*{\centering{PROBLEM 6 - F7 : \(x^y\)}}
